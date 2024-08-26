@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content text-center mb-4" id="home">
+    <h1>{{ movie_name }}</h1>
+</div>
+<div class="card mb-4 shadow-sm">
+    <img src="{{ url_for('static', filename ='thebatman.png') }}" class="card-img-top" alt="movie">
+    <div class="card-body text-center">
+        <h2>Watched already? Give your response</h2>
+        <form action="{{ url_for('batman') }}" method="post" class="mt-3">
+            <div class="form-group">
+                <input type="text" name="review" class="form-control" placeholder="Liked it.." required>
+                <input type="hidden" name="movie" value="{{ movie_name }}">
+                <input type="hidden" name="img" value="{{ img }}">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+        <h1 class="mt-4">{{ prediction_text }}</h1>
+    </div>
+</div>
+
+<div class="reviews" id="reviews">
+    <h3>Reviews here</h3>
+    {% for review in Reviews %}
+    <div class="review-box">
+        <p><strong>Movie Name:</strong> {{ review.moivename }}</p>
+        <p><strong>Review:</strong> {{ review.review }}</p>
+        <p><strong>Emotion:</strong> {{ review.emotion }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="container" id="recommendations">
+    <h1 class="mt-5">Review Counts</h1>
+    <p class="mt-3">Positive Reviews: {{ positive_count }}</p>
+    <p>Negative Reviews: {{ negative_count }}</p>
+    {% if positive_count > negative_count %}
+    <p> Most of them liked this Flim u can watch </p>
+    {% endif %}
+    <a href="{{ url_for('hello_world') }}" class="btn btn-primary mt-3">Back to Home</a>
+</div>
+{% endblock %}

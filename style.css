@@ -1,0 +1,117 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+.content {
+    margin-top: 60px; /* Adjust based on navbar height */
+    padding: 20px;
+}
+
+.container {
+    margin: 100px auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.movie {
+    text-align: center;
+    width: 18%;
+}
+
+.container img {
+    width: 80%;
+    height: 200px; /* Adjusted for better fit */
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.684);
+    transition: transform 0.5s, width 0.5s;
+}
+
+.container img:hover {
+    width: 100%;
+    transform: scale(1.2);
+}
+
+.container a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-family: fantasy;
+    margin-top: 10px;
+}
+
+.container a:hover {
+    color: yellow;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.dbs {
+    margin: 50px auto;
+    width: 90%;
+}
+
+.reviews-container {
+    max-height: 400px; /* Fixed height for scrolling */
+    overflow-y: auto;
+    border: 1px solid #555;
+    border-radius: 10px;
+    background: #222;
+    padding: 10px;
+}
+
+.reviews-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reviews-container li {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
